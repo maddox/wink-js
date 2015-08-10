@@ -107,6 +107,17 @@ function DELETE(data, callback) {
 }
 
 var wink = {
+	request: function request(method, path, body, callback){
+		data = {}
+		data.host = winkUri
+		data.method = method
+		data.path = path
+		data.data = body
+
+		_http(data, function(response){
+			callback(response)
+		});
+	},
 	authenticate: function (auth_data, callback) {
 		if ( accessToken === undefined ) {
 			if ( auth_data.grant_type === undefined ) {

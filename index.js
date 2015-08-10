@@ -285,7 +285,6 @@ var wink = {
 					GET({
 						path: "/users/me/groups"
 					}, function(data) {
-						console.log(data);
 						callback(data);
 					});
 				},
